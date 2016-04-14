@@ -1,2 +1,1 @@
-# Twtter-Crawler
-A command line twitter streamer made with node.
+# matt martin's Twitter Crawler

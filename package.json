@@ -1,0 +1,28 @@
+{
+  "name": "twittercrawl",
+  "version": "1.0.0",
+  "description": "basic twitter crawler built with node.",
+  "main": "twitterCrawl.js",
+  "dependencies": {
+    "twitter": "^1.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angryjenkins/twitterCrawler.git"
+  },
+  "keywords": [
+    "twitter",
+    "crawler",
+    "sttreaming"
+  ],
+  "author": "@angryjenkins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angryjenkins/twitterCrawler/issues"
+  },
+  "homepage": "https://github.com/angryjenkins/twitterCrawler#readme"
+}
