@@ -12,7 +12,7 @@ var client = new Twitter({
 client.stream('statuses/filter', {track: subject, lang: 'en'},  function(stream){
   stream.on('data', function(tweet) {
     var tweetTime = new Date ();
-    console.log(("@" + tweet.user.screen_name).bgBlue + ' ::: ' + colors.cyan(tweetTime));
+    console.log(("@" + tweet.user.screen_name).underline.cyan + ' ::: ' + colors.cyan(tweetTime));
     console.log(tweet.text);
     console.log('*********');
   });
