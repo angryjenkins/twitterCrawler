@@ -1,6 +1,6 @@
 var Twitter = require('twitter');
-
-var subject = process.argv[2]
+var colors = require('colors');
+var subject = process.argv[2];
 
 var client = new Twitter({
   consumer_key: 'ykW7lgMUFThqz5IL4q5ScI7Ss',
@@ -12,8 +12,9 @@ var client = new Twitter({
 client.stream('statuses/filter', {track: subject, lang: 'en'},  function(stream){
   stream.on('data', function(tweet) {
     var tweetTime = new Date ();
-    console.log(tweetTime + "  @" + tweet.user.screen_name + " ::: " + tweet.text);
-    console.log('****');
+    console.log(("@" + tweet.user.screen_name).bgBlue + ' ::: ' + colors.cyan(tweetTime));
+    console.log(tweet.text);
+    console.log('*********');
   });
   //BULLSHIT POSH, SORRY GITHUB!
   stream.on('error', function(error) {
