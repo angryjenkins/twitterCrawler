@@ -31,3 +31,8 @@ Enter the cloned directory with your terminal and start the app by typing
 ... where X is the subject or user you want to get tweets about.
 
 Have fun!
+
+
+NEW EDITION- NPM START
+
+use "npm start *query*" to search.
