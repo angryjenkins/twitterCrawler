@@ -7,7 +7,6 @@ Say you are watching the Mets play the Phillies, and they are failing to hit. Ag
 
 Open the twitterCrawler directory in your terminal and type "node twitterCrawler mets". Timestamped tweets will stream to your terminal in real time.
 
-
 ## Method
 
 This command line app uses Node and npm's twitter package to stream tweets related to a query. It works just like any Node app that uses *process.argv* for input. 
@@ -24,7 +23,7 @@ Plug these four keys into the quotes in the keys.js file and you are set to stre
 
 Enter the cloned directory with your terminal and start the app by typing
 
-> $ node twitterCrawl "X"
+> $ node twitterCrawl "<query>"
 
 ... where X is the subject or user you want to get tweets about.
 
