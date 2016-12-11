@@ -1,6 +1,6 @@
 {
   "name": "twittercrawl",
-  "version": "1.0.0",
+  "version": "1.1.0",z
   "description": "basic twitter crawler built with node.",
   "main": "twitterCrawl.js",
   "dependencies": {
@@ -21,7 +21,7 @@
     "crawler",
     "sttreaming"
   ],
-  "author": "@angryjenkins",
+  "author": "@mttmrtm",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/angryjenkins/twitterCrawler/issues"

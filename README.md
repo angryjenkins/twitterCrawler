@@ -25,10 +25,8 @@ Enter the cloned directory with your terminal and start the app by typing
 
 > $ node twitterCrawl "<query>"
 
-... where X is the subject or user you want to get tweets about.
-
 Have fun!
 
-## NEW ADDITION - NPM START
+## TwitterCrawl 1.1.0 - NPM START
 
 >use "npm start *query*" to search.
