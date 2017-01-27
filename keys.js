@@ -1,8 +1,8 @@
 exports.twitterKeys = {
-  consumer_key: 'ykW7lgMUFThqz5IL4q5ScI7Ss',
-  consumer_secret: 'vvZ3YB54OozPZvquxlKVkONVspn6Dzj1wDBnK6XFvSZxyzCuxo',
-  access_token_key: '733105861-FaINs5DuUaEz1leoqgmEHpYFkWryaSpDy3NBVA7F',
-  access_token_secret: '0Jlu8gQbkYp2RYWEEIY8LmRowfcLoR0e0BXC9McqVLOsK'
+	consumer_key: 'MY_CONSUMER_KEY',
+	consumer_secret: 'MY_CONSUMER_SECRET',
+    access_token_key: 'MY_ACCESS_TOKEN_KEY',
+    access_token_secret: 'MY_ACCESS_TOKEN_SECRET'
 };
 
 // go to https://dev.twitter.com to get access keys.
