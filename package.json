@@ -4,10 +4,11 @@
   "description": "basic twitter crawler built with node.",
   "main": "twitterCrawl.js",
   "dependencies": {
-    "colors": "^1.1.2",
+    "colors": "^1.1.2"
+  },
+  "devDependencies": {
     "twitter": "^1.2.5"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node twitterCrawl.js"

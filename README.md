@@ -1,4 +1,4 @@
-# matt martin's Twitter Crawler
+# matt martin's Twitter Crawler (v1.1.0)
 
 
 ## Summary
@@ -9,7 +9,7 @@ Open the twitterCrawler directory in your terminal and type "node twitterCrawler
 
 ## Method
 
-This command line app uses Node and npm's twitter package to stream tweets related to a query. It works just like any Node app that uses *process.argv* for input. 
+This command line app uses Node and npm's twitter package to stream tweets related to a query. It works just like any Node app that uses *process.argv* for input.
 
 + Get a Twitter Developer Key!
 
