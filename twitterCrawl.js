@@ -13,7 +13,6 @@ client.stream('statuses/filter', {track: subject, lang: 'en'},  function(stream)
     console.log(tweet.user.name.yellow + " " +(" @" + tweet.user.screen_name + " ").cyan.bold + ' ::: ' + colors.cyan(tweetTime));
     console.log(tweet.text);
   });
-  //BULLSHIT POSH, SORRY GITHUB!
   stream.on('error', function(error) {
     console.log(error);
   });
