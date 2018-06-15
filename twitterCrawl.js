@@ -10,7 +10,7 @@ client.stream('statuses/filter', {track: subject, lang: 'en'},  function(stream)
     var tweetTime = new Date ();
     console.log(('____________').yellow);
 
-    console.log(tweet.user.name.yellow + " " +(" @" + tweet.user.screen_name + " ").cyan.bold + ' ::: ' + colors.cyan(tweetTime));
+    console.log(tweet.user.name.yellow + " " +(" @" + tweet.user.screen_name + " ").red.bold + ' ::: ' + colors.red(tweetTime));
     console.log(tweet.text);
   });
   stream.on('error', function(error) {
