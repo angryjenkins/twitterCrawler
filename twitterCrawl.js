@@ -12,9 +12,10 @@ client.stream('statuses/filter', {track: subject, lang: 'en'},  function(stream)
     console.log(('_______________').yellow);
 
     console.log(tweet.user.name.yellow 
-        + " " 
-        +(" @" + tweet.user.screen_name + " ").yellow.bold 
-        + '\n::: ' + colors.yellow(tweetTime));
+      + " " 
+      +(" @" + tweet.user.screen_name).yellow.bold 
+      + ' ::: ' + colors.yellow(tweetTime)
+    );
 
     console.log(tweet.text);
   });
