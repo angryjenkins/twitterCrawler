@@ -8,11 +8,12 @@
     "moment": "^2.22.2"
   },
   "devDependencies": {
+    "nodemon": "^1.18.4",
     "twitter": "^1.7.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node twitterCrawl.js"
+    "start": "nodemon twitterCrawl.js"
   },
   "repository": {
     "type": "git",

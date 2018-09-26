@@ -8,16 +8,31 @@ var client = new Twitter(keys.twitterKeys);
 
 client.stream('statuses/filter', {track: subject, lang: 'en'},  function(stream){
   stream.on('data', function(tweet) {
-    var tweetTime = new Date ();
-    console.log(('_______________').yellow);
 
-    console.log(tweet.user.name.yellow 
+    var twit = {
+      time: '\n::: ' + moment().format("MMM Do YYYY"),
+      name: tweet.user.name,
+      handle: " @" + tweet.user.screen_name,
+      loc: function(tweet){
+        if(tweet.user.location){
+          return " ::: " + tweet.user.location;
+        } else {
+          return "";
+        }
+      },
+      post: tweet.text
+    }
+
+    console.log(('\n_____________').yellow);
+
+    console.log(twit.name.yellow 
       + " " 
-      +(" @" + tweet.user.screen_name).yellow.bold 
-      + ' ::: ' + colors.yellow(tweetTime)
+      + twit.handle.yellow.bold 
+      + twit.time.yellow
+      + twit.loc(tweet).yellow
     );
 
-    console.log(tweet.text);
+    console.log(twit.post);
   });
   stream.on('error', function(error) {
     console.log(error);
