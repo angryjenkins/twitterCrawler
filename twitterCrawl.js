@@ -10,7 +10,7 @@ client.stream('statuses/filter', {track: subject, lang: 'en'},  function(stream)
   stream.on('data', function(tweet) {
 
     var twit = {
-      time: '\n::: ' + moment().format("MMM Do YYYY"),
+      time: '\n::: ' + moment().calendar(),
       name: tweet.user.name,
       handle: " @" + tweet.user.screen_name,
       loc: function(tweet){
