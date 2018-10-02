@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 var Twitter   = require('twitter');
 var colors    = require('colors');
 var keys      = require('./keys');
