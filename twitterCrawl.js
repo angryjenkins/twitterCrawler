@@ -27,7 +27,7 @@ client.stream('statuses/filter', {track: subject, lang: 'en'},  function(stream)
 
     console.log(('\n_____________').yellow);
 
-    console.log(twit.name.yellow 
+    console.log(twit.name.white 
       + " " 
       + twit.handle.yellow.bold 
       + twit.time.yellow
