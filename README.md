@@ -29,6 +29,6 @@ Have fun!
 
 ## TwitterCrawl 1.1.0 - NPM START
 
->use "npm start *query*" to search.
+>Now you can use "npm start *query*" to search. Nodemon is integrated.
 
 Please note, the current color scheme is best viewed on a terminal with a DARK background. The [colors](https://www.npmjs.com/package/colors) npm package is used to configure them.
