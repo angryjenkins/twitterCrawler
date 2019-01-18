@@ -15,23 +15,17 @@ client.stream('statuses/filter', {track: subject, lang: 'en'},  function(stream)
       time: '\n::: ' + moment().calendar(),
       name: tweet.user.name,
       handle: " @" + tweet.user.screen_name,
-      loc: function(tweet){
-        if(tweet.user.location){
-          return " ::: " + tweet.user.location;
-        } else {
-          return "";
-        }
-      },
+      loc: (tweet) => (tweet.user.location) ? " ::: " + tweet.user.location : "",
       post: tweet.text
     }
 
     console.log(('\n_____________').yellow);
 
-    console.log(twit.name.white.bold 
+    console.log(twit.name.yellow.bold
       + " " 
-      + twit.handle.yellow.bold 
-      + twit.time.yellow
-      + twit.loc(tweet).yellow
+      + twit.handle.green.bold
+      + twit.time.green
+      + twit.loc(tweet).green
     );
 
     console.log(twit.post);

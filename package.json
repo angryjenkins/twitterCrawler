@@ -4,12 +4,12 @@
   "description": "basic command-line twitter crawler built with node.",
   "main": "twitterCrawl.js",
   "dependencies": {
-    "colors": "^1.3.2",
-    "moment": "^2.22.2"
+    "colors": "^1.3.3",
+    "moment": "^2.23.0"
   },
   "devDependencies": {
-    "dotenv": "^6.0.0",
-    "nodemon": "^1.18.4",
+    "dotenv": "^6.2.0",
+    "nodemon": "^1.18.9",
     "twitter": "^1.7.1"
   },
   "scripts": {
