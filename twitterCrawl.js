@@ -12,7 +12,7 @@ client.stream('statuses/filter', {track: subject, lang: 'en'},  function(stream)
   stream.on('data', function(tweet) {
 
     var twit = {
-      time: '\n::: ' + moment().calendar(),
+      time: '\n::: ' + moment().format("MMM Do YYYY h:mma"),
       name: tweet.user.name,
       handle: " @" + tweet.user.screen_name,
       loc: (tweet) => (tweet.user.location) ? " ::: " + tweet.user.location : "",
