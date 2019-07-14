@@ -14,10 +14,12 @@ client.stream('statuses/filter', {track: subject, lang: 'en'},  function(stream)
     var twit = {
       time: '\n::: ' + moment().format("MMM Do YYYY h:mma"),
       name: tweet.user.name,
+      url: tweet.source,
       handle: " @" + tweet.user.screen_name,
       loc: (tweet) => (tweet.user.location) ? " ::: " + tweet.user.location : "",
-      post: tweet.text
+      post: tweet.extended_tweet.full_text
     }
+
 
     console.log(('\n_____________').yellow);
 
@@ -29,6 +31,7 @@ client.stream('statuses/filter', {track: subject, lang: 'en'},  function(stream)
     );
 
     console.log(twit.post);
+
   });
   stream.on('error', function(error) {
     console.log(error);
