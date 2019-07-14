@@ -17,21 +17,23 @@ client.stream('statuses/filter', {track: subject, lang: 'en'},  function(stream)
       url: tweet.source,
       handle: " @" + tweet.user.screen_name,
       loc: (tweet) => (tweet.user.location) ? " ::: " + tweet.user.location : "",
-      post: tweet.extended_tweet.full_text
+      // post: tweet.text
+      post: (tweet) => (tweet.truncated) ? tweet.extended_tweet.full_text : tweet.text
     }
 
 
-    console.log(('\n_____________').yellow);
+    console.log(('\n_____________').yellow)
 
     console.log(twit.name.yellow.bold
       + " " 
       + twit.handle.green.bold
       + twit.time.green
       + twit.loc(tweet).green
-    );
+    )
 
-    console.log(twit.post);
+    console.log(twit.post(tweet));
 
+    // console.log(tweet);
   });
   stream.on('error', function(error) {
     console.log(error);
