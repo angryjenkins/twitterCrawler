@@ -16,7 +16,6 @@ client.stream('statuses/filter', {track: subject, lang: 'en'},  function(stream)
       name: tweet.user.name,
       handle: " @" + tweet.user.screen_name,
       loc: (tweet) => (tweet.user.location) ? " ::: " + tweet.user.location : "",
-      // post: tweet.text
       post: (tweet) => (tweet.truncated) ? tweet.extended_tweet.full_text : tweet.text
     }
 
@@ -31,8 +30,6 @@ client.stream('statuses/filter', {track: subject, lang: 'en'},  function(stream)
     )
 
     console.log(twit.post(tweet));
-
-    // console.log(tweet);
   });
   stream.on('error', function(error) {
     console.log(error);
