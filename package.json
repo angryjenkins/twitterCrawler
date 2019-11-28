@@ -1,34 +1,34 @@
 {
-  "name": "twittercrawl",
-  "version": "1.1.0",
-  "description": "basic command-line twitter crawler built with node.",
-  "main": "twitterCrawl.js",
-  "dependencies": {
-    "colors": "^1.4.0",
-    "moment": "^2.24.0"
-  },
-  "devDependencies": {
-    "dotenv": "^6.2.0",
-    "nodemon": "^1.19.4",
-    "twitter": "^1.7.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon twitterCrawl.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/angryjenkins/twitterCrawler.git"
-  },
-  "keywords": [
-    "twitter",
-    "crawler",
-    "streaming"
-  ],
-  "author": "@angryjenkins",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/angryjenkins/twitterCrawler/issues"
-  },
-  "homepage": "https://github.com/angryjenkins/twitterCrawler#readme"
+	"name": "twittercrawl",
+	"version": "1.1.0",
+	"description": "basic command-line twitter crawler built with node.",
+	"main": "twitterCrawl.js",
+	"dependencies": {
+		"colors": "^1.4.0",
+		"moment": "^2.24.0",
+		"twitter": "^1.7.1"
+	},
+	"devDependencies": {
+		"dotenv": "^8.2.0",
+		"nodemon": "^2.0.1"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon twitterCrawl.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/angryjenkins/twitterCrawler.git"
+	},
+	"keywords": [
+		"twitter",
+		"crawler",
+		"streaming"
+	],
+	"author": "@angryjenkins",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/angryjenkins/twitterCrawler/issues"
+	},
+	"homepage": "https://github.com/angryjenkins/twitterCrawler#readme"
 }
