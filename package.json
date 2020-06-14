@@ -8,6 +8,7 @@
 		"moment": "^2.25.3"
 	},
 	"devDependencies": {
+		"aws4": "^1.10.0",
 		"deep-extend": "^0.6.0",
 		"dotenv": "^8.2.0",
 		"har-validator": "^5.1.3",
