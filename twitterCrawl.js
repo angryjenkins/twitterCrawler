@@ -21,17 +21,17 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 				tweet.truncated ? tweet.extended_tweet.full_text : tweet.text,
 		};
 
-		console.log('\n_____________'.white);
+		console.log('\n_____________'.bold.white)
 
 		console.log(
 			twit.name.white.bold +
 				' ' +
-				twit.handle.white.bold +
-				twit.time.magenta +
-				twit.loc(tweet).magenta,
+				twit.handle.bold +
+				twit.time.bold +
+				twit.loc(tweet).bold,
 		);
 
-		console.log(twit.post(tweet));
+		console.log('\n' + twit.post(tweet));
 	});
 	stream.on('error', function(error) {
 		console.log(error);
