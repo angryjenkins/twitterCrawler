@@ -21,14 +21,14 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 				tweet.truncated ? tweet.extended_tweet.full_text : tweet.text,
 		};
 
-		console.log('\n_____________'.yellow);
+		console.log('\n_____________'.white);
 
 		console.log(
 			twit.name.yellow.bold +
 				' ' +
 				twit.handle.brightGreen.bold +
-				twit.time.yellow +
-				twit.loc(tweet).yellow,
+				twit.time.white +
+				twit.loc(tweet).magenta,
 		);
 
 		console.log(twit.post(tweet));
