@@ -26,7 +26,7 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 		console.log(
 			twit.name.white.bold +
 				' ' +
-				twit.handle.bold.magenta +
+				twit.handle.bold.red +
 				twit.time.bold +
 				twit.loc(tweet).bold,
 		);
