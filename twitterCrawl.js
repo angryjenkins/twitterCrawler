@@ -24,10 +24,10 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 		console.log('\n_____________'.white);
 
 		console.log(
-			twit.name.yellow.bold +
+			twit.name.white.bold +
 				' ' +
-				twit.handle.brightGreen.bold +
-				twit.time.white +
+				twit.handle.white.bold +
+				twit.time.magenta +
 				twit.loc(tweet).magenta,
 		);
 
