@@ -26,11 +26,11 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 		console.log(
 			twit.name.white.bold +
 				' ' +
-				twit.handle.bold.red +
+				twit.handle.bold.green +
 				twit.time.bold +
 				twit.loc(tweet).bold,
 		);
-
+ 
 		console.log('\n' + twit.post(tweet));
 	});
 	stream.on('error', function(error) {
