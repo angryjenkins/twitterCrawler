@@ -1,18 +1,17 @@
 require('dotenv').config();
 
-var Twitter = require('twitter');
-var chalk = require('chalk');
-var keys = require('./keys');
-const { bgBlack } = require('chalk');
+const Twitter = require('twitter');
+const chalk = require('chalk');
+const keys = require('./keys');
 
-var subject = process.argv[2];
-var client = new Twitter(keys.twitterKeys);
+const subject = process.argv[2];
+const client = new Twitter(keys.twitterKeys);
 
 client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 	stream,
 ) {
 	stream.on('data', function(tweet) {
-		var twit = {
+		const twit = {
 			time: `\n::: ${new Date().toLocaleString('en-US',  {
 				weekday: 'long',
 				day: 'numeric',
