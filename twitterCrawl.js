@@ -23,7 +23,7 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 			})}`,
 			name: tweet.user.name,
 			handle: ' @' + tweet.user.screen_name,
-			desc: tweet => (tweet.user.description ? chalk.hex('#eeceee').italic(' ::: ' + tweet.user.description) : ''),
+			desc: tweet => (tweet.user.description ? chalk.cyanBright.italic(' ::: ' + tweet.user.description) : ''),
 			loc: tweet => (tweet.user.location ? ' ::: ' + tweet.user.location : ''),
 			post: tweet => {
 				if (typeof tweet.retweeted_status === 'object' && tweet.retweeted_status !== null) {
@@ -47,10 +47,9 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 		console.log(
 			chalk.hex('#98fb98').bold(twit.name) +
 				' ' +
-				chalk.cyanBright(twit.handle) +
+				chalk.hex('#eeceee')(twit.handle) +
 				' ' +
 				twit.desc(tweet) +
-				'\n' +
 				chalk.hex('#87ceeb').italic(twit.time) +
 				chalk.hex('#87ceeb').italic(twit.loc(tweet)),
 		);
