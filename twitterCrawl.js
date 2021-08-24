@@ -3,6 +3,7 @@ require('dotenv').config();
 var Twitter = require('twitter');
 var chalk = require('chalk');
 var keys = require('./keys');
+const { bgBlack } = require('chalk');
 
 var subject = process.argv[2];
 var client = new Twitter(keys.twitterKeys);
@@ -12,7 +13,15 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 ) {
 	stream.on('data', function(tweet) {
 		var twit = {
-			time: '\n::: ' + new Date().toUTCString(),
+			time: `\n::: ${new Date().toLocaleString('en-US',  {
+				weekday: 'long',
+				day: 'numeric',
+				year: 'numeric',
+				month: 'long',
+				hour: 'numeric',
+				minute: 'numeric',
+				second: 'numeric'
+			})}`,
 			name: tweet.user.name,
 			handle: ' @' + tweet.user.screen_name,
 			loc: tweet => (tweet.user.location ? ' ::: ' + tweet.user.location : ''),
