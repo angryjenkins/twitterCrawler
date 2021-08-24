@@ -31,7 +31,7 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 
 					const retweet = tweet.retweeted_status.truncated ? tweet.retweeted_status.extended_tweet.full_text : tweet.retweeted_status.text
 
-					return `${chalk.white('retweeting')} ${chalk.cyanBright(retweeted + ':')} ${retweet}` 
+					return `${chalk.cyanBright.dim('retweeting ' + retweeted)}: ${retweet}` 
 				}
 
 				if (tweet.truncated === true) {
@@ -55,7 +55,7 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 				chalk.hex('#87ceeb').italic(twit.loc(tweet)),
 		);
  
-		console.log('\n' + chalk.hex('#eeceee').dim(twit.post(tweet)));
+		console.log('\n' + chalk.hex('#eeceee')(twit.post(tweet)));
 	});
 	stream.on('error', function(error) {
 		console.log(error);
