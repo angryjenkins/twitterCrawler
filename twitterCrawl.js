@@ -23,9 +23,23 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 			})}`,
 			name: tweet.user.name,
 			handle: ' @' + tweet.user.screen_name,
+			desc: tweet.user.description,
 			loc: tweet => (tweet.user.location ? ' ::: ' + tweet.user.location : ''),
-			post: tweet =>
-				tweet.truncated ? tweet.extended_tweet.full_text : tweet.text,
+			post: tweet => {
+				if (typeof tweet.retweeted_status === 'object' && tweet.retweeted_status !== null) {
+					const retweeted = `@${tweet.retweeted_status.user.screen_name}`
+
+					const retweet = tweet.retweeted_status.truncated ? tweet.retweeted_status.extended_tweet.full_text : tweet.retweeted_status.text
+
+					return `${chalk.green('retweeting')} ${chalk.cyan(retweeted + ':')} ${retweet}` 
+				}
+
+				if (tweet.truncated === true) {
+					return tweet.extended_tweet.full_text
+				}
+
+				return tweet.text
+			}
 		};
 
 		console.log(chalk.bold.white('\n_____________'))
@@ -34,6 +48,9 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 			chalk.hex('#98fb98').bold(twit.name) +
 				' ' +
 				chalk.cyanBright(twit.handle) +
+				'\n' +
+				chalk.hex('#eeceee').dim(twit.desc !== null ? twit.desc : '') +
+				'\n' +
 				chalk.hex('#87ceeb').italic(twit.time) +
 				chalk.hex('#87ceeb').italic(twit.loc(tweet)),
 		);
@@ -41,6 +58,6 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 		console.log('\n' + twit.post(tweet));
 	});
 	stream.on('error', function(error) {
-		console.error(error);
+		console.log(error);
 	});
 });
