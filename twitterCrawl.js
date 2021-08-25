@@ -24,7 +24,7 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 			name: tweet.user.name,
 			handle: ' @' + tweet.user.screen_name,
 			desc: tweet => (tweet.user.description ? chalk.cyanBright.italic(' ::: ' + tweet.user.description) : ''),
-			loc: tweet => (tweet.user.location ? ' ::: ' + tweet.user.location : ''),
+			loc: tweet => (tweet.user.location ? '::: ' + tweet.user.location : ''),
 			post: tweet => {
 				if (typeof tweet.retweeted_status === 'object' && tweet.retweeted_status !== null) {
 					const retweeted = `@${tweet.retweeted_status.user.screen_name}`
@@ -44,15 +44,8 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 
 		console.log(chalk.bold.white('\n_____________'))
 
-		console.log(
-			chalk.hex('#98fb98').bold(twit.name) +
-				' ' +
-				chalk.hex('#eeceee')(twit.handle) +
-				' ' +
-				twit.desc(tweet) +
-				chalk.hex('#87ceeb').italic(twit.time) +
-				chalk.hex('#87ceeb').italic(twit.loc(tweet)),
-		);
+		console.log(`${chalk.hex('#98fb98').bold(twit.name)} ${(chalk.hex('#eeceee')(twit.handle))} ${chalk.cyanBright(twit.desc(tweet))}`)
+		console.log(`${chalk.hex('#87ceeb').italic(twit.time)} ${chalk.hex('#87ceeb').italic(twit.loc(tweet))}`)
  
 		console.log('\n' + twit.post(tweet));
 	});
