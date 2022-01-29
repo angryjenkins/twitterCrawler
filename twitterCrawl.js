@@ -31,7 +31,7 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 
 					const retweet = tweet.retweeted_status.truncated ? tweet.retweeted_status.extended_tweet.full_text : tweet.retweeted_status.text
 
-					return `${chalk.gray.italic('retweeting ' + retweeted)}: ${retweet}` 
+					return `${chalk.bgGray.italic('retweeting ' + retweeted)}: ${retweet}` 
 				}
 
 				if (tweet.truncated === true) {
