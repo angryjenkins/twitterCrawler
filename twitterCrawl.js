@@ -23,8 +23,8 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 			})}`,
 			name: tweet.user.name,
 			handle: ' @' + tweet.user.screen_name,
-			desc: tweet => (tweet.user.description ? chalk.greenBright.italic(' ::: ' + tweet.user.description) : ''),
-			loc: tweet => (tweet.user.location ? '::: ' + tweet.user.location : ''),
+			desc: tweet => (tweet.user.description ? chalk.greenBright.italic(` ::: ${tweet.user.description}`) : ''),
+			loc: tweet => (tweet.user.location ? `::: ${tweet.user.location}` : ''),
 			post: tweet => {
 				if (typeof tweet.retweeted_status === 'object' && tweet.retweeted_status !== null) {
 					const retweeted = `@${tweet.retweeted_status.user.screen_name}`
