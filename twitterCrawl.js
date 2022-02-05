@@ -44,7 +44,7 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 
 		console.log(chalk.bold.white('\n_____________'))
 
-		console.log(`${chalk.green.bold(twit.name)} ${(chalk.yellow.bold(twit.handle))} ${chalk.cyanBright(twit.desc(tweet))}`)
+		console.log(`${chalk.bgGray.bold(twit.name)} ${(chalk.yellow.bold(twit.handle))} ${chalk.cyanBright(twit.desc(tweet))}`)
 		console.log(`${chalk.blueBright.italic(twit.time)} ${chalk.cyan.italic(twit.loc(tweet))}`)
  
 		console.log('\n' + twit.post(tweet));
