@@ -42,11 +42,10 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 			}
 		};
 
-		console.log(chalk.bold.white('\n_____________'))
+		console.log(chalk.bold.whiteBright('\n_____________'))
 
-		console.log(`${chalk.blue.bold(twit.name)} ${(chalk.yellow.bold(twit.handle))} ${chalk.cyanBright(twit.desc(tweet))}`)
+		console.log(`${chalk.greenBright.bold(twit.name)} ${(chalk.yellow(twit.handle))} ${twit.desc(tweet)}`)
 		console.log(`${chalk.cyan.bold.italic(twit.time)} ${chalk.yellow(twit.loc(tweet))}`)
- 
 		console.log('\n' + twit.post(tweet));
 	});
 	stream.on('error', function(error) {
