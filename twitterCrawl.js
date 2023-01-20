@@ -37,7 +37,7 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 
 					const retweet = tweet.retweeted_status.truncated ? tweet.retweeted_status.extended_tweet.full_text : tweet.retweeted_status.text
 					
-					const date = `\n(from ${chalk.italic.yellow(new Date(tweet.retweeted_status.created_at).toLocaleString('en-US',  {
+					const date = `\n(from ${chalk.italic.cyan(new Date(tweet.retweeted_status.created_at).toLocaleString('en-US',  {
 						weekday: 'long',
 						day: 'numeric',
 						year: 'numeric',
@@ -70,7 +70,7 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 
 					const quote = tweet.quoted_status.truncated ? tweet.quoted_status.extended_tweet.full_text : tweet.quoted_status.text
 					
-					const date = `\n(from ${chalk.italic.yellow(new Date(tweet.quoted_status.created_at).toLocaleString('en-US',  {
+					const date = `\n(from ${chalk.italic.cyan(new Date(tweet.quoted_status.created_at).toLocaleString('en-US',  {
 						weekday: 'long',
 						day: 'numeric',
 						year: 'numeric',
