@@ -31,15 +31,23 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 
 					let retweeted = `${chalk.bgGray.italic('retweeted ' + chalk.yellow.bold(name) + ', aka ' + chalk.bold.blueBright('@' + screen_name))}`;
 
-
 					if (location) retweeted += '\nfrom ' + chalk.italic.yellow.bold(location)
 					if (description) retweeted += ` :: ${chalk.italic(description)}`
 					if (verified) retweeted += chalk.bold.cyanBright(` :: verified!`)
 
 					const retweet = tweet.retweeted_status.truncated ? tweet.retweeted_status.extended_tweet.full_text : tweet.retweeted_status.text
 					
+					const date = `\n(from ${chalk.italic.yellow(new Date(tweet.retweeted_status.created_at).toLocaleString('en-US',  {
+						weekday: 'long',
+						day: 'numeric',
+						year: 'numeric',
+						month: 'long',
+						hour: 'numeric',
+						minute: 'numeric',
+						second: 'numeric'
+					}))})`
 
-					return `\n${retweeted}\n\n${retweet}`
+					return `\n${retweeted} ${date}\n\n${retweet}`
 				}
 
 				if (tweet.truncated === true) {
@@ -62,8 +70,17 @@ client.stream('statuses/filter', { track: subject, lang: 'en' }, function(
 
 					const quote = tweet.quoted_status.truncated ? tweet.quoted_status.extended_tweet.full_text : tweet.quoted_status.text
 					
+					const date = `\n(from ${chalk.italic.yellow(new Date(tweet.quoted_status.created_at).toLocaleString('en-US',  {
+						weekday: 'long',
+						day: 'numeric',
+						year: 'numeric',
+						month: 'long',
+						hour: 'numeric',
+						minute: 'numeric',
+						second: 'numeric'
+					}))})`
 
-					return `\n${quoted}\n\n${quote}`
+					return `\n${quoted} ${date}\n\n${quote}`
 				}
 
 				return false
